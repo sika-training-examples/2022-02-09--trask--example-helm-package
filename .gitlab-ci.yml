@@ -4,7 +4,7 @@ stages:
   - deploy
 
 variables:
-  HOST: trask.panda.k8s.oxs.cz
+  HOST: trask-counter.panda.k8s.oxs.cz
 
 deploy:
   stage: deploy
