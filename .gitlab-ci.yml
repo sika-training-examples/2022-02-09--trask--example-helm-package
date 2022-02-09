@@ -1,0 +1,18 @@
+image: sikalabs/ci
+
+stages:
+  - deploy
+
+variables:
+  HOST: trask.panda.k8s.oxs.cz
+
+deploy:
+  stage: deploy
+  script:
+    - helm upgrade --install 
+        trask ./charts/counter
+        -n training
+        --set host=$HOST
+  environment:
+    name: k8s/main
+    url: https://$HOST
